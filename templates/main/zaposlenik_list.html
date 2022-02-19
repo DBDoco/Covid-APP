@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Zaposlenici </h2>
+<br>
+{% for zaposlenik in zaposlenik_list %}
+    <div class="zaposlenik">
+        <h4>{{ zaposlenik.zaposlenik_ime }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_prezime }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_oib }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_adresa }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_email }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_fakultet }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_cijepljen }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_cjepivo }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_datum_cijepljenja }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_datum_isteka_potvrde }}</h4>
+        <h4>{{ zaposlenik.zaposlenik_prebolio_covid }}</h4>
+    </div>
+{% endfor %}
+{% endblock %}

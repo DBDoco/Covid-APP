@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Cjepiva </h2>
+<br>
+{% for cjepivo in cjepivo_list %}
+    <div class="cjepivo">
+        <h4>{{ cjepivo.cjepivo_naziv }}</h4>
+        <h4>{{ cjepivo.broj_doza }}</h4>
+    </div>
+{% endfor %}
+{% endblock %}

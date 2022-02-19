@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Studenti </h2>
+<br>
+{% for student in fakultet_list %}
+    <div class="student">
+        <h4>{{ student.student_ime }}</h4>
+        <h4>{{ student.student_prezime }}</h4>
+        <h4>{{ student.student_jmbag }}</h4>
+        <h4>{{ student.student_adresa }}</h4>
+        <h4>{{ student.student_email }}</h4>
+        <h4>{{ student.student_fakultet }}</h4>
+        <h4>{{ student.student_cijepljen }}</h4>
+        <h4>{{ student.student_cjepivo }}</h4>
+        <h4>{{ student.student_datum_cijepljenja }}</h4>
+        <h4>{{ student.student_datum_isteka_potvrde }}</h4>
+        <h4>{{ student.student_prebolio_covid }}</h4>
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Fakulteti </h2>
+<br>
+{% for fakultet in fakultet_list %}
+    <div class="fakultet">
+        <h4>{{ fakultet.fakultet_naziv }}</h4>
+        <h4>{{ fakultet.fakultet_adresa }}</h4>
+        <h4>{{ fakultet.fakultet_kontakt_broj }}</h4>
+        <h4>{{ fakultet.fakultet_email_referade }}</h4>
+        <h4>{{ fakultet.fakultet_website }}</h4>
+    </div>
+{% endfor %}
+{% endblock %}

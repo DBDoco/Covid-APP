@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/fakulteti">Fakulteti</a></li>
+            <li><a href="/cjepiva">Cjepiva</a></li>
+            <li><a href="/studenti">Studenti</a></li>
+            <li><a href="/zaposlenici">Zaposlenici</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
