@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from pyexpat.errors import messages
+import re
+from django.shortcuts import redirect, render
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from main.models import *
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
 
 
 ## Create your views here.
@@ -32,8 +35,8 @@ def register(request):
             password = form.cleaned_data['password1']
 
             user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('index')
+            login(request,user)
+            return redirect('login')
 
     else:
         form = UserCreationForm()

@@ -1,4 +1,4 @@
-<form method="post" action="{% url 'register' %}">
+<form method="post" action="register">
     {% csrf_token %}
 
     {% if form.errors %}
