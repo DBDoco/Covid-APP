@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style_index.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <title>{% block title %}Covid APP{% endblock %}</title>
+    </head>
 <body>
-    <h1>Homepage</h1>
-
+    <div class="navbar"> 
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/fakulteti">Fakulteti</a></li>
+        <li><a href="/cjepiva">Cjepiva</a></li>
+        <li><a href="/studenti">Studenti</a></li>
+        <li><a href="/zaposlenici">Zaposlenici</a></li>
+    </ul>
+    </div>
+    <h1>Covid APP</h1>
+    <img class="DNA" src="https://i.ibb.co/4TCCryQ/Pngtree-human-dna-genetic-photos-62823.png" alt="Pngtree-human-dna-genetic-photos-62823" border="0">
     {% if user.is_authenticated %}
-        <p>Vaše ime: {{ user.username }}</p>   
+        <p>Prijavljeni ste kao: {{ user.username }}</p>   
     {% else %}
         <p>Niste prijavljeni.</p>
     {% endif %}
+
+    <div class="center">
+        <a href="/accounts/login"><button class="button_main" type="button">Login</button></a>
+        <button class="button_secondary" type="button">Register</button>
+    </div>
+
+
 </body>
 </html>

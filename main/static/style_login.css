@@ -1,0 +1,82 @@
+body {
+    background-color: #F5F5F5;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #30475E;
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+input[type=button], input[type=submit], input[type=reset]  {
+    margin-top: 20px;
+    margin-left: 94px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #F05454;
+    border: none;
+    color: #F5F5F5;
+    padding: 15px 40px;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border: 2px solid transparent;
+
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: gray;
+    color: #F5F5F5;
+    border: 2px solid #30475E;
+}
+
+.navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: transparent; 
+	} 
+ 
+.navbar  ul li {  
+	display: inline; 
+    position: relative;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+	} 
+ 
+.navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 2em; 
+	color: #30475E; 
+	background-color: transparent;
+
+}
+
+.navbar li:after {
+    content: "";
+    position: absolute;
+    left:0;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background-color: #30475E;
+    transition: width .3s ease-in-out;
+}
+ 
+li:hover:after {
+    width: 100%;
+}
+

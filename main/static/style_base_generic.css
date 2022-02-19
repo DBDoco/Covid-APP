@@ -1,0 +1,43 @@
+body{
+    background-color: #F5F5F5;
+}
+
+.navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: transparent; 
+	} 
+ 
+.navbar  ul li {  
+	display: inline; 
+    position: relative;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+	} 
+ 
+.navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 2em; 
+	color: #30475E; 
+	background-color: transparent;
+
+}
+
+.navbar li:after {
+    content: "";
+    position: absolute;
+    left:0;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background-color: #30475E;
+    transition: width .3s ease-in-out;
+}
+ 
+li:hover:after {
+    width: 100%;
+}
