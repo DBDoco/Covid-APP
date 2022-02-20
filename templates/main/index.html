@@ -27,8 +27,12 @@
     {% endif %}
 
     <div class="center">
+        {% if user.is_authenticated %}
+        <a href="/logout"><button class="button_main" type="button">Logout</button></a>
+        {% else %}
         <a href="/accounts/login"><button class="button_main" type="button">Login</button></a>
-        <button class="button_secondary" type="button">Register</button>
+        {% endif %}
+        <a href="/register"><button class="button_secondary" type="button">Register</button></a>
     </div>
 
 

@@ -1,11 +1,25 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style_register.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<div class="navbar"> 
+  <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/fakulteti">Fakulteti</a></li>
+      <li><a href="/cjepiva">Cjepiva</a></li>
+      <li><a href="/studenti">Studenti</a></li>
+      <li><a href="/zaposlenici">Zaposlenici</a></li>
+  </ul>
+  </div>
+
 <form method="post" action="register">
     {% csrf_token %}
-
-    {% if form.errors %}
-        <p>Greška.</p>
-    {% endif %}
-
     {{ form }}
 
+    {% if form.errors %}
+    <h3>Greška.</h3>
+    {% endif %}
     <input type="submit" value="Register" />
 </form>

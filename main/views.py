@@ -7,6 +7,7 @@ from main.models import *
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 
 ## Create your views here.
@@ -44,3 +45,9 @@ def register(request):
     context = {'form': form}
 
     return render(request, 'registration/register.html', context)
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, "Odjavili ste se!")
+    return redirect('/')

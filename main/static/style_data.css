@@ -1,0 +1,32 @@
+body {
+    background-color: #F5F5F5;
+}
+
+hr{
+    border: 1px solid #30475E;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    line-height: 10px;
+    color: #30475E;
+    text-align: center;
+}
+
+p{
+    font-weight: 500;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    line-height: 10px;
+    text-align: center;
+}
+
+.opis {
+    color: #30475E;
+}
+
+.podatak{
+    color: #F05454;
+}

@@ -1,12 +1,25 @@
 {% extends "base_generic.html" %}
 {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style_data.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+<body>
 <br>
-<h2> Cjepiva </h2>
+<h1> Cjepiva </h1>
 <br>
 {% for cjepivo in cjepivo_list %}
     <div class="cjepivo">
-        <h4>{{ cjepivo.cjepivo_naziv }}</h4>
-        <h4>{{ cjepivo.broj_doza }}</h4>
+        <p><span class="opis">Naziv: </span> <span class="podatak">{{ cjepivo.cjepivo_naziv }}</span></p>
+        <p><span class="opis">Broj doza: </span> <span class="podatak">{{ cjepivo.broj_doza }}</span></p><hr>
     </div>
 {% endfor %}
 {% endblock %}
+</body>
+</html>
