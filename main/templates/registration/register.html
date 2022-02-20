@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'style_register.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'style_login.css' %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,12 +14,27 @@
   </ul>
   </div>
 
-<form method="post" action="register">
+  <form method="post" action="register">
     {% csrf_token %}
-    {{ form }}
 
     {% if form.errors %}
-    <h3>Greška.</h3>
+        <p>Greška.</p>
     {% endif %}
+
+    <table>
+        <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.password1.label_tag }}</td>
+          <td>{{ form.password1 }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password2.label_tag }}</td>
+            <td>{{ form.password2 }}</td>
+          </tr>
+      </table>
+
     <input type="submit" value="Register" />
 </form>
