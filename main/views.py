@@ -8,6 +8,8 @@ from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from rest_framework import viewsets
+from main.serializers import *
 
 ## Create your views here.
 class FakultetList(ListView):
@@ -59,3 +61,18 @@ def ZaposlenikList(request):
     context = {'num_zaposlenik_cjepljenih' : num_zaposlenik_cjepljenih,'num_zaposlenik' : num_zaposlenik, 'allZaposlenik' : allZaposlenik}
     return render(request, 'main/zaposlenik_list.html', context = context)
 
+class FakultetViewSet(viewsets.ModelViewSet):
+    queryset = Fakultet.objects.all().order_by('fakultet_naziv')
+    serializer_class = FakultetSerializer
+
+class CjepivoViewSet(viewsets.ModelViewSet):
+    queryset = Cjepivo.objects.all().order_by('cjepivo_naziv')
+    serializer_class = CjepivoSerializer
+
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all().order_by('student_prezime')
+    serializer_class = StudentSerializer
+
+class ZaposlenikViewSet(viewsets.ModelViewSet):
+    queryset = Zaposlenik.objects.all().order_by('zaposlenik_prezime')
+    serializer_class = ZaposlenikSerializer
