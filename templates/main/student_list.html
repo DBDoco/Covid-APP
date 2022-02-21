@@ -14,7 +14,9 @@
 <br>
 <h1> Studenti </h1>
 <br>
-{% for student in student_list %}
+<p><span class="opis cijepljeni">Cijepljeno je:</span> <span class="podatak"> {{num_student_cjepljenih}} </span><span class="opis">studenata, od sveukupno: {{num_student}} studenata</span> </p>
+<br><br>
+{% for student in allStudent %}
     <div class="student">
         <p><span class="opis">Ime: </span> <span class="podatak">{{ student.student_ime }}</span></p>
         <p><span class="opis">Prezime: </span> <span class="podatak">{{ student.student_prezime }}</span></p>
@@ -30,5 +32,3 @@
     </div>
 {% endfor %}
 {% endblock %}
-</body>
-</html>

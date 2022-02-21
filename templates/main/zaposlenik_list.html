@@ -14,7 +14,9 @@
 <br>
 <h1> Zaposlenici </h1>
 <br>
-{% for zaposlenik in zaposlenik_list %}
+<p><span class="opis cijepljeni">Cijepljeno je:</span> <span class="podatak"> {{num_zaposlenik_cjepljenih}} </span><span class="opis">zaposlenika, od sveukupno: {{num_zaposlenik}} zaposlenika</span> </p>
+<br><br>
+{% for zaposlenik in allZaposlenik %}
     <div class="zaposlenik">
         <p><span class="opis">Ime: </span> <span class="podatak">{{ zaposlenik.zaposlenik_ime }}</span></p>
         <p><span class="opis">Prezime: </span> <span class="podatak">{{ zaposlenik.zaposlenik_prezime }}</span></p>
