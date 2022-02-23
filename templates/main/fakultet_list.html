@@ -16,7 +16,7 @@
 <br>
 {% for fakultet in fakultet_list %}
     <div class="fakultet">
-        <p><span class="opis">Naziv fakulteta:</span> <span class="podatak">{{ fakultet.fakultet_naziv }}</span></p>
+        <p><span class="opis">Naziv fakulteta:</span> <span class="podatak"><a href="{{fakultet.fakultet_naziv}}"> {{ fakultet.fakultet_naziv }}</a></span></p>
         <p><span class="opis">Adresa:</span>  <span class="podatak">{{ fakultet.fakultet_adresa }}</span></p>
         <p><span class="opis">Tel:</span>  <span class="podatak">{{ fakultet.fakultet_kontakt_broj }}</span></p>
         <p><span class="opis">E-mail:</span>  <span class="podatak">{{ fakultet.fakultet_email_referade }}</span></p>

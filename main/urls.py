@@ -21,5 +21,6 @@ urlpatterns = [
     path('studenti', views.StudentList, name ="studenti"),
     path('zaposlenici', views.ZaposlenikList, name ="zaposlenici"),
     path('fakulteti', FakultetList.as_view()),
-    path('cjepiva', CjepivoList.as_view())
+    path('cjepiva', CjepivoList.as_view()),
+    path('<fakultet>', FakultetStudentList.as_view())
 ]

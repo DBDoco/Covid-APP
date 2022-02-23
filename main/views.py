@@ -61,6 +61,14 @@ def ZaposlenikList(request):
     context = {'num_zaposlenik_cjepljenih' : num_zaposlenik_cjepljenih,'num_zaposlenik' : num_zaposlenik, 'allZaposlenik' : allZaposlenik}
     return render(request, 'main/zaposlenik_list.html', context = context)
 
+class FakultetStudentList(ListView):
+
+    template_name = 'main/fakultetstudent.html'
+
+    def get_queryset(self):
+        self.fakultet = get_object_or_404(Fakultet, fakultet_naziv=self.kwargs['fakultet'])
+        return Student.objects.filter(student_fakultet=self.fakultet)
+
 class FakultetViewSet(viewsets.ModelViewSet):
     queryset = Fakultet.objects.all().order_by('fakultet_naziv')
     serializer_class = FakultetSerializer
