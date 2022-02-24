@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from rest_framework import viewsets
 from main.serializers import *
+from django.contrib.auth.decorators import login_required
 
 ## Create your views here.
 class FakultetList(ListView):
@@ -47,6 +48,7 @@ def logout_user(request):
     messages.success(request, "Odjavili ste se!")
     return redirect('/')
 
+@login_required(login_url="accounts/login/")
 def StudentList(request):
     allStudent = Student.objects.all()
     num_student_cjepljenih  = Student.objects.filter(student_cijepljen=True).count()
@@ -54,6 +56,7 @@ def StudentList(request):
     context = {'num_student_cjepljenih' : num_student_cjepljenih,'num_student' : num_student, 'allStudent' : allStudent}
     return render(request, 'main/student_list.html', context = context)
 
+@login_required(login_url="accounts/login/")
 def ZaposlenikList(request):
     allZaposlenik = Zaposlenik.objects.all()
     num_zaposlenik_cjepljenih  = Zaposlenik.objects.filter(zaposlenik_cijepljen=True).count()
